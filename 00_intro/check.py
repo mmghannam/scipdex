@@ -11,9 +11,11 @@ class TestPrintVersion(unittest.TestCase):
 
 class TestFirstModel(unittest.TestCase):
     def test_first_model(self):
+        from pyscipopt import Model
         from first_model import first_model
 
         model = first_model()
+        self.assertTrue(isinstance(model, Model), "Return value is not a Model instance")
         self.assertEqual(model.getNVars(), 2, f"Number of variables = {model.getNVars()} is not equal to 2")
         self.assertEqual(model.getNConss(), 1, f"Number of constraints = {model.getNConss()} is not equal to 1")
 
