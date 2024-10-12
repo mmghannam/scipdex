@@ -14,7 +14,7 @@ pip install pyscipopt
 ```
 for other installation options, please refer to the [PySCIPOpt documentation](https://pyscipopt.readthedocs.io/en/latest/install.html).
 
-Now you're ready to start the exercises! 🚀 Start by going to [00_intro](00_intro) and follow the instructions in the [README.md](00_intro/README.md) file.
+Now you're ready to start the exercises 🚀 Start by going to [00_intro](00_intro) and follow the instructions in the [README.md](00_intro/README.md) file.
 
 ## Contributing
 If you find any issues or have suggestions for improvements, please open an [issue](https://github.com/mmghannam/scipdex/issues/new/choose) or a pull request. Thank you!
