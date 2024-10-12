@@ -1,12 +1,10 @@
-<div style="display: flex; justify-content: center; align-items: center; margin-bottom: -3em">
-  <h1 style="flex-grow: 1; text-align: center; margin-top: -15px">SCIPdex</h1>
-  <img src="logo.png" style="width: 350px; margin-left: -200px;">
-</div>
+# SCIPdex  
+
+<img src="logo.png" align="right" width="700px">
 
 A collection of interactive exercises to get you started (and more) with [PySCIPOpt](https://github.com/scipopt/PySCIPOpt).
-It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).
-The exercises are split into folders split by topic. Each folder contains a README.md file describing the exercises and python files with TODOs.
-Each folder has a `check.py` file that checks if the exercises are correctly solved.
+It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).  
+The exercises are split into folders by topic. Each folder contains a README.md file describing the exercises and python files with TODOs. Each folder has a `check.py` file that checks if the exercises are correctly solved.
 
 ## Installation
 The exercises depend only on PySCIPOpt and its dependencies. You can install them with:
