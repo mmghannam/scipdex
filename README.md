@@ -1,6 +1,6 @@
-# SCIPdex  
+# SCIPDex  
 
-<img src="logo.svg" align="right" width="500px">
+<img src="SCIPDex.svg" align="right" width="500px">
 
 A collection of interactive exercises to get you started (and more) with [PySCIPOpt](https://github.com/scipopt/PySCIPOpt).
 It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).  
