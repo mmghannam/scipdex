@@ -18,3 +18,15 @@ subject to
 
 Refer to the [docs](https://pyscipopt.readthedocs.io/en/latest/tutorials/model.html#create-a-model-variables-and-constraints) for help.
 
+
+### Exercise 3: Read and problem from a file
+TODO! 
+
+### Exercise 4: Query solution and model stats
+TODO!
+
+### Exercise 5: Set parameters
+TODO! 
+
+### Exercise 6: Setting emphasis modes
+TODO!
