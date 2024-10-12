@@ -1,4 +1,9 @@
 # scipdex
+
+<div style="float: right; margin-left: -65px; margin-bottom: 10px; margin-right: -50px">
+  <img src="logo.png" width="350">
+</div>
+
 A collection of interactive exercises to get you started (and more) with [PySCIPOpt](https://github.com/scipopt/PySCIPOpt).
 It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).
 
