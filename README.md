@@ -4,6 +4,7 @@
 
 A collection of interactive exercises to get you started (and more) with [PySCIPOpt](https://github.com/scipopt/PySCIPOpt).
 It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).  
+
 The exercises are split into folders by topic. Each folder contains a README.md file describing the exercises and python files with TODOs. Each folder has a `check.py` file that checks if the exercises are correctly solved.
 
 ## Installation
