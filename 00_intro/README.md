@@ -3,12 +3,12 @@
 Welcome to SCIPDex! let's get started with the first exercise 🚀
 
 ### Exercise 1: Print SCIP version used
-Go to [00_intro/print_version.py](00_intro/print_version.py) and complete the TODOs.
+Go to [00_intro/print_version.py](print_version.py) and complete the TODOs.
 You can look for the method to use in the [PySCIPOpt documentation](https://pyscipopt.readthedocs.io).
 
 
 ### Exercise 2: Create your first SCIP model
-Go to [00_intro/first_model.py] and implement the following model:
+Go to [00_intro/first_model.py](first_model.py) and implement the following model:
 ```
 maximize x + y
 subject to
