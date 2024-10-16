@@ -20,7 +20,7 @@ that the knapsack's capacity cannot be exceeded by the total weight of chosen it
 
 $$
 \begin{align*}
-\min_x      & \sum_{i \in \mathcal{I}} x_i v_i \\
+\max_x      & \sum_{i \in \mathcal{I}} x_i v_i \\
 \text{s.t.} & \sum_{i \in \mathcal{I}} x_i w_i \leq C\\
             & x_i \in \lbrace 0,1 \rbrace, \forall i \in \mathcal{I} 
 \end{align*}
@@ -68,4 +68,9 @@ In many scenarios, we are more interested in the binary variant of the knapsack 
 #### Exercise 1.5: 3D-knapsack (nonlinear constraints)
 TODO!
 
+
+### Problem 2 - ....
+
+
+### Outro
 
