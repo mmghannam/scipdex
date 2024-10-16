@@ -9,28 +9,48 @@ You can look for the method to use in the [PySCIPOpt documentation](https://pysc
 
 ### Exercise 2: Create your first SCIP model
 Go to [00_intro/first_model.py](first_model.py) and implement the following model:
-```
-maximize x + y
-subject to
- x + y <= 1
- x, y binary
-```
+
+$$
+\begin{align*}
+\max_{x,y}  \quad & x + y \\
+\text{s.t.} \quad & x + y \leq 1 \\
+                  & x, y \in \lbrace 0,1 \rbrace
+\end{align*}
+$$
 
 Refer to the [docs](https://pyscipopt.readthedocs.io/en/latest/tutorials/model.html#create-a-model-variables-and-constraints) for help.
 
 
-### Exercise 3: Read and problem from a file
+### Exercise 3: Read a problem from a file
 TODO! 
+**Your task:** Read the `roi2alpha3n4.mps.gz` instance.
 
-### Exercise 4: Query solution and model stats
+<details>
+    <summary>Hint 1</summary>
+    You can use the <code>readProblem()</code> method for this.
+</details>
+
+### Exercise 4: Set parameters
 TODO!
+**Your task:** Optimize the model from exercise 3 with the following parameters
+|  Parameter | Value |
+|------------|-------|
+| Time limit |  20   | 
+| Node limit |  15   | 
+| Gap limit  |  10%  | 
 
-### Exercise 5: Set parameters
-TODO! 
+<details>
+    <summary>Hint 1</summary>
+    You can find the (very extensive) list of SCIP parameters <a href="https://www.scipopt.org/doc/html/PARAMETERS.php">here</a>.
+</details>
+
+### Exercise 5: Query solution and model stats
+TODO!
+**Your task**: Discover which of the parameters you set in exercise 4 terminated the solving process.
 
 ### Exercise 6: Setting emphasis modes
 TODO!
-
+**Your task:**
 
 ### Outro
 If you've reached this far, congratulations!🎉 
