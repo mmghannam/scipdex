@@ -7,13 +7,16 @@ We will start with the basics of modeling (mixed) integer linear programs and mo
 
 In this first exercise, you will be asked to implement several variants of the famous Knapsack problem.
 
-<p align="center">
-<img src="../Media/skippy_knapsack.png" alt="drawing" width="400"/>
-</p>
-
 The most popular variant of this problem is the $0-1$ knapsack, where one needs to decide which items to put into a knapsack/bag.
 These items both have a weight and a value, and thus the objective is to maximize the total value we bring, keeping in mind
 that the knapsack's capacity cannot be exceeded by the total weight of chosen items.
+
+<figure>
+<p align="center">
+<img src="../Media/skippy_knapsack.png" alt="drawing" width="400"/>
+<figcaption align="center">Figure 1: Skippy undecided between taking a gold bar, a pizza slice, and the Z1 motor-driven mechanical computer.</figcaption>
+</p>
+</figure>
 
 $$
 \begin{align*}
@@ -23,27 +26,44 @@ $$
 \end{align*}
 $$
 
+As you will see with these classical problems, they . 
+Sometimes the key to solving a real-world problem is to identify the well-known classic problem that represents them.  
+Here are some examples where knapsack could be applied:
+- a
+- b
+- c
+
 #### Exercise 1.1: Knapsack problem with fractional items
-Let us start with a simplified version of the classical knapsack, where instead of being forced to .
-This is called the *linear relaxation* of the problem, and is essential for branch-and-bound.
+Let us start with a simplified version of the classical knapsack, where instead of choosing which items to pick, we must choose which amount to pick.
+Mathematically, the variable bounds go from $x_i \in \lbrace 0,1 \rbrace$ to $0 \leq x_i \leq 1$.
 
 **Your task**: Formulate the problem described above with continuous variables 
 
 <details>
     <summary>Hint 1</summary>
-    This way we can make hints. TODO
+    The variable bounds can be set during variable creation with the options <code>lb</code> and <code>ub</code>, for lower bound and upper bound, respectively.
 </details>
 
-TODO! 
-
 #### Exercise 1.2: 0-1 Knapsack problem
-TODO! 
+In many scenarios, we are more interested in the binary variant of the knapsack problem.
+
+**Your task:**: Enforce integrality on the variables.
+
+<details>
+    <summary>Hint 1</summary>
+    You can set the variable type during variable creation with the <code>vtype</code> option.
+</details>
 
 #### Exercise 1.3: Allow many items
-TODO! 
+**Your task:** Allow the possibility for choosing multiple copies of the same item.
+
+<details>
+    <summary>Hint 1</summary>
+    Instead of the variables being binary, they can just be integer.
+</details>
 
 #### Exercise 1.4: Max 4 items in the knapsack
-TODO!
+**Your task:** Force the solution to have at most 4 items.
 
 #### Exercise 1.5: 3D-knapsack (nonlinear constraints)
 TODO!

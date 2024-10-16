@@ -30,3 +30,11 @@ TODO!
 
 ### Exercise 6: Setting emphasis modes
 TODO!
+
+
+### Outro
+If you've reached this far, congratulations!🎉 
+By now, you should be able to create a basic model and query it.... 
+
+You are now ready to take on Chapter 1, where we will be looking at modeling classic problems in the literature!
+Check out the [README](../01_modeling/README.md) for the necessary information.
