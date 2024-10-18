@@ -33,6 +33,7 @@ TODO!
 ### Exercise 4: Set parameters
 TODO!
 **Your task:** Optimize the model from exercise 3 with the following parameters
+
 |  Parameter | Value |
 |------------|-------|
 | Time limit |  20   | 
