@@ -1,4 +1,4 @@
-from knapsack import solve_knapsack_with_constraints
+from pricing_knapsack import solve_knapsack_with_constraints
 
 
 def test_knapsack_with_constraints():

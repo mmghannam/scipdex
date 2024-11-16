@@ -1,6 +1,6 @@
 import math
 from pyscipopt import Pricer, SCIP_RESULT
-from knapsack import pricing_solver
+from pricing_knapsack import pricing_solver
 
 class KnapsackPricer(Pricer):
     def __init__(self, sizes, capacity, constraints, branching_decisions, *args, **kwargs):
