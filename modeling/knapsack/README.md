@@ -68,7 +68,7 @@ In many scenarios, we are more interested in the binary variant of the knapsack 
 #### Exercise 1.5: 3D-knapsack (nonlinear constraints)
 TODO!
 
-
+<!-- 
 ### Problem 2 - Bin-packing
 
 # TODO
@@ -91,7 +91,7 @@ $$
 \end{align*}
 $$
 
-
+ -->
 
 
 ### Outro
