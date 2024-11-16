@@ -27,7 +27,7 @@ Here are some examples where knapsack could be applied:
 - b
 - c
 
-#### Exercise 1.1: Knapsack problem with fractional items
+#### Exercise 1: Knapsack problem with fractional items
 Let us start with a simplified version of the classical knapsack, where instead of choosing which items to pick, we must choose which amount to pick.
 Mathematically, the variable bounds go from $x_i \in \lbrace 0,1 \rbrace$ to $0 \leq x_i \leq 1$.
 
@@ -38,7 +38,7 @@ Mathematically, the variable bounds go from $x_i \in \lbrace 0,1 \rbrace$ to $0 
     The variable bounds can be set during variable creation with the options <code>lb</code> and <code>ub</code>, for lower bound and upper bound, respectively.
 </details>
 
-#### Exercise 1.2: 0-1 Knapsack problem
+#### Exercise 2: 0-1 Knapsack problem
 In many scenarios, we are more interested in the binary variant of the knapsack problem.
 
 **Your task:** Enforce integrality on the variables.
@@ -48,7 +48,7 @@ In many scenarios, we are more interested in the binary variant of the knapsack 
     You can set the variable type during variable creation with the <code>vtype</code> option.
 </details>
 
-#### Exercise 1.3: Allow many items
+#### Exercise 3: Allow many items
 **Your task:** Allow the possibility for choosing multiple copies of the same item.
 
 <details>
@@ -56,5 +56,5 @@ In many scenarios, we are more interested in the binary variant of the knapsack 
     Instead of the variables being binary, they can just be integer.
 </details>
 
-#### Exercise 1.4: Max `n` items in the knapsack
+#### Exercise 4: Max `n` items in the knapsack
 **Your task:** Force the solution to have at most `n` items.
