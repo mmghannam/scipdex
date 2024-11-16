@@ -13,6 +13,7 @@ def test_knapsack_lp_greedy(capacity, weights):
     model.setPresolve(SCIP_PARAMSETTING.OFF)
     model.setHeuristics(SCIP_PARAMSETTING.OFF)
     model.setSeparating(SCIP_PARAMSETTING.OFF)
+    model.setParam("limits/nodes", 1)
 
     vars = [model.addVar(vtype="B", name=f"x{i}", obj=i) for i in range(len(weights))]
     heuristic = knapsack_lp_greedy(capacity, weights, vars)
@@ -24,3 +25,5 @@ def test_knapsack_lp_greedy(capacity, weights):
     model.setMaximize()
 
     model.optimize()
+
+    assert model.getObjVal() == 7
