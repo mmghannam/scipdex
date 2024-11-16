@@ -20,12 +20,12 @@ $$
 \end{align*}
 $$
 
-As you will see with these classical problems, they . 
+As you will see with these classical problems, they ????
 Sometimes the key to solving a real-world problem is to identify the well-known classic problem that represents them.  
 Here are some examples where knapsack could be applied:
-- a
-- b
-- c
+- a???
+- b???
+- c???
 
 #### Exercise 1: Knapsack problem with fractional items
 Let us start with a simplified version of the classical knapsack, where instead of choosing which items to pick, we must choose which amount to pick.

@@ -8,7 +8,7 @@ The first two chapters will give a light overview of bin packing, both its compa
 If you try to run the branch-and-price code, you will encounter errors. That is because some code is missing and must be implemented by you. The error messages tell you what you should do. Eg: "The knapsack solver is not implemented yet" implies that you should implement the knapsack solver.
 
 
-## 1. Extended Formulation: Modeling with Packings
+## Section 1. Extended Formulation: Modeling with Packings
 Next, we switch our perspective to the so-called "extended" formulation of the bin packing problem. Instead of modeling with assignments of items to bins we "extend" all possible packings of items into bins. A packing is simply a subset of items that be packed into a bin (respecting its capacity). Using this concept of packings we arrive at an equivalent formulation:
 
 Given a set of items $I$ and a set of packings $\mathcal{P}$, we have a variable $z_P$ that is equal to 1 if packing $P$ is used and 0 otherwise. We have a set of constraints that ensure that each item is packed into exactly one bin and that the total size of the items in each bin does not exceed the bin capacity. The objective is to minimize the number of bins used.
@@ -25,7 +25,7 @@ where $\mathcal{P}$ is the set of all possible packings of items into bins.
 
 This formulation has one problem. The size of the problem grows exponentially with the number of items. Only instances with a small number of items can be even loaded in memory. Therefore, we attempt to solve it using a branch-and-price algorithm. This formulation and the general structure required for solving this problem can be found in [scipack/bnp.py](scipack/bnp.py) (but again, it's missing some code snippets you must add).
 
-## 2. Branch-and-Price Algorithm
+## Section 2. Branch-and-Price Algorithm
 In this section, we will first discuss how to solve the linear relaxation of the problem using column generation. Then, we will discuss how to handle branching decisions and infeasibility.
 
 ### 2.1 Column Generation
