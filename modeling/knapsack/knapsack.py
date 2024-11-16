@@ -1,3 +1,6 @@
+from pyscipopt import quicksum
+
+
 def linear_knapsack(capacity, weights, values):
     from pyscipopt import Model
     model = Model()
@@ -7,7 +10,7 @@ def linear_knapsack(capacity, weights, values):
     for i in range(len(weights)):
         x[i] = model.addVar(obj=values[i])
 
-    model.addCons(sum(x[i]*weights[i] for i in range(len(weights))) <= capacity)
+    model.addCons(quicksum(x[i]*weights[i] for i in range(len(weights))) <= capacity)
 
     model.setMaximize()
     return model
