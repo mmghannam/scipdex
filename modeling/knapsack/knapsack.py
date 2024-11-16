@@ -43,7 +43,7 @@ def integer_knapsack(capacity, weights, values):
     model.setMaximize()
     return model
 
-def limited_knapsack(capacity, weights, values):
+def limited_knapsack(capacity, weights, values, max_items):
     from pyscipopt import Model
     model = Model()
 
@@ -53,14 +53,7 @@ def limited_knapsack(capacity, weights, values):
         x[i] = model.addVar(obj=values[i], vtype="B")
 
     model.addCons(sum(x[i]*weights[i] for i in range(len(weights))) <= capacity)
-    model.addCons(sum(x[i] for i in range(len(weights))) <= 4)
+    model.addCons(sum(x[i] for i in range(len(weights))) <= max_items)
 
     model.setMaximize()
-    return model
-
-def multidimensional_knapsack(capacity, weights, values):
-    from pyscipopt import Model
-    model = Model()
-
-    # TODO Implement a 3 dimensional knapsack, as described in exercise 1.5
     return model

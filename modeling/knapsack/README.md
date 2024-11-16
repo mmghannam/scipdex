@@ -61,37 +61,5 @@ In many scenarios, we are more interested in the binary variant of the knapsack 
     Instead of the variables being binary, they can just be integer.
 </details>
 
-#### Exercise 1.4: Max 4 items in the knapsack
-**Your task:** Force the solution to have at most 4 items.
-
-#### Exercise 1.5: 3D-knapsack (nonlinear constraints)
-TODO!
-
-<!-- 
-### Problem 2 - Bin-packing
-
-# TODO
-!!!! Copied from scipack !!!!
-
-We first present the so-called "compact" formulation of the bin packing problem.
-> The compactness comes from the fact the number of variables and constraints is polynomial in the number of items.
-
-In this formulation, we have $x_{ij}$ variables that are equal to 1 if item i is packed into bin j and 0 otherwise. We also have a set of constraints that ensure that each item is packed into exactly one bin and that the total size of the items in each bin does not exceed the bin capacity. Additionally, we have a set of variables used to compute the objective value, $y_j$ that are equal to 1 if bin j is used and 0 otherwise. The objective is to minimize the number of bins used. For simplicity, we will assume that the bins have identical capacities.
-
-The compact formulation is as follows:
-
-$$
-\begin{align*}
-\text{minimize} & \quad \sum_{j=1}^{n} y_j \\
-\text{subject to} & \quad \sum_{j=1}^{n} x_{ij} = 1, \quad \forall i \in \lbrace1, \ldots, m\rbrace \\
-& \quad \sum_{i=1}^{m} s_i x_{ij} \leq Cy_j, \quad \forall j \in \lbrace1, \ldots, n\rbrace \\
-& \quad x_{ij} \in \lbrace0, 1\rbrace, \quad \forall i \in \lbrace1, \ldots, m\rbrace, j \in \lbrace1, \ldots, n\rbrace \\
-& \quad y_j \in \lbrace0, 1\rbrace, \quad \forall j \in \lbrace1, \ldots, n\rbrace
-\end{align*}
-$$
-
- -->
-
-
-### Outro
-
+#### Exercise 1.4: Max `n` items in the knapsack
+**Your task:** Force the solution to have at most `n` items.
