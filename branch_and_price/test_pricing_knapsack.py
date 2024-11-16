@@ -1,4 +1,4 @@
-from knapsack import solve_knapsack, solve_knapsack_with_constraints
+from pricing_knapsack import solve_knapsack, solve_knapsack_with_constraints
 
 def test_solve_knapsack():
     sizes = [2, 3, 4, 5]
