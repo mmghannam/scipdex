@@ -2,10 +2,12 @@ import pytest
 from pyscipopt import Model, SCIP_HEURTIMING, SCIP_PARAMSETTING
 
 
-@pytest.mark.parametrize("capacity, weights", [
-    (10, [1, 2, 3, 4, 5])
+@pytest.mark.parametrize("capacity, weights, expected", [
+    (10, [1, 2, 3, 4, 5], 7),
+    (7, [1, 2, 3, 4, 5], 4),
+    (8, [1, 2, 3, 4, 5], 4),
 ])
-def test_knapsack_lp_greedy(capacity, weights):
+def test_knapsack_lp_greedy(capacity, weights, expected):
     from primal_heuristic.knapsack_lp_greedy import knapsack_lp_greedy
 
     model = Model()
@@ -26,4 +28,4 @@ def test_knapsack_lp_greedy(capacity, weights):
 
     model.optimize()
 
-    assert model.getObjVal() == 7
+    assert pytest.approx(model.getObjVal(), rel=1e-5) == expected
