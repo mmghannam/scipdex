@@ -31,7 +31,7 @@ Here are some examples where knapsack could be applied:
 Let us start with a simplified version of the classical knapsack, where instead of choosing which items to pick, we must choose which amount to pick.
 Mathematically, the variable bounds go from $x_i \in \lbrace 0,1 \rbrace$ to $0 \leq x_i \leq 1$.
 
-**Your task**: Formulate the problem described above with continuous variables 
+**Your task:** Formulate the problem described above with continuous variables 
 
 <details>
     <summary>Hint 1</summary>
@@ -41,7 +41,7 @@ Mathematically, the variable bounds go from $x_i \in \lbrace 0,1 \rbrace$ to $0 
 #### Exercise 1.2: 0-1 Knapsack problem
 In many scenarios, we are more interested in the binary variant of the knapsack problem.
 
-**Your task:**: Enforce integrality on the variables.
+**Your task:** Enforce integrality on the variables.
 
 <details>
     <summary>Hint 1</summary>

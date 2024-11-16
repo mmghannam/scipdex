@@ -16,7 +16,7 @@ for other ways of installing PySCIPOPt, please refer to the [PySCIPOpt documenta
 
 ## Getting Started
 
-Now you're ready to start the exercises 🚀 The repository is divided into chapters, each containing multiple problems. In the chapter there is a README describing each of the problems, and in each of the problems there is a README describing the problem in detail and the exercises to be completed. Besides this README, the problem folder also has a `[problem].py` file to solve the exercises and a `check.py` file for testing your solution. Here is a brief description of each chapter:
+Now you're ready to start the exercises 🚀 The repository is divided into chapters, each containing multiple problems. In the chapter there is a README describing each of the problems, and in each of the problems there is a README describing the problem in detail and the exercises to be completed. Besides this README, the problem folder also has a `[problem].py` file to solve the exercises and a `check.py` file for testing your solution. More complex problems might need more files to structure the code better, but the corresponding README's explain the structure. Here is a brief description of each chapter:
 
 - modeling: An introduction to PySCIPOpt and its more elementary functionalities.
 - event_handler: Unlocking the ability to interrupt the solving process when a predetermined event is caught, and executing user-code.
