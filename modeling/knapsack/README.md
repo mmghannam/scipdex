@@ -8,9 +8,8 @@ that the knapsack's capacity cannot be exceeded by the total weight of chosen it
 
 <figure>
 <p align="center">
-<img src="../Media/skippy_knapsack.png" alt="drawing" width="400"/>
+<img src="skippy_knapsack.png" alt="drawing" width="400"/>
 <figcaption align="center">Figure 1: Skippy undecided between taking a gold bar, a pizza slice, and the Z1 motor-driven mechanical computer.</figcaption>
-</p>
 </figure>
 
 $$
