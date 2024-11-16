@@ -8,7 +8,7 @@ import pytest
 ])
 def test_linear_knapsack(capacity, weights, values, expected):
     from pyscipopt import Model
-    from modeling.knapsack.knapsack import linear_knapsack
+    from knapsack import linear_knapsack
 
     model = linear_knapsack(capacity, weights, values)
     assert isinstance(model, Model), "Return value is not a Model instance"
@@ -26,7 +26,7 @@ def test_linear_knapsack(capacity, weights, values, expected):
 ])
 def test_binary_knapsack(capacity, weights, values, expected):
     from pyscipopt import Model
-    from modeling.knapsack.knapsack import binary_knapsack
+    from knapsack import binary_knapsack
 
     model = binary_knapsack(capacity, weights, values)
     assert isinstance(model, Model), "Return value is not a Model instance"
@@ -44,7 +44,7 @@ def test_binary_knapsack(capacity, weights, values, expected):
 ])
 def test_integer_knapsack(capacity, weights, values, expected):
     from pyscipopt import Model
-    from modeling.knapsack.knapsack import integer_knapsack
+    from knapsack import integer_knapsack
 
     model = integer_knapsack(capacity, weights, values)
     assert isinstance(model, Model), "Return value is not a Model instance"
@@ -63,7 +63,7 @@ def test_integer_knapsack(capacity, weights, values, expected):
 ])
 def test_limited_knapsack(capacity, weights, values, max_items, expected):
     from pyscipopt import Model
-    from modeling.knapsack.knapsack import limited_knapsack
+    from knapsack import limited_knapsack
 
     model = limited_knapsack(capacity, weights, values, max_items)
     assert isinstance(model, Model), "Return value is not a Model instance"
