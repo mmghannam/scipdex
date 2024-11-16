@@ -1,6 +1,6 @@
 import pyscipopt
 
-from branching_rule.first import first_branching_rule
+from first import first_branching_rule
 
 
 def test_first_branching_rule():

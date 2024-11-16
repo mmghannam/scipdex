@@ -3,5 +3,7 @@ def print_version():
 
     # Create a new model
     model = Model()
+    model.redirectOutput()
 
     # TODO: Print the version of SCIP, which SCIP version is used?
+    model.printVersion()
