@@ -1,11 +1,6 @@
-## 02. Modeling in PySCIPOpt
+### The Knapsack Problem 
 
-Welcome to the modeling exercises! 🚀 SCIP is one of the most versatile solvers out there for modeling. 
-We will start with the basics of modeling (mixed) integer linear programs and move on to more advanced constraint types.
-
-### Problem 1 - Knapsack 
-
-In this first exercise, you will be asked to implement several variants of the famous Knapsack problem.
+In this exercise, you will be asked to implement several variants of the famous Knapsack problem.
 
 The most popular variant of this problem is the $0-1$ knapsack, where one needs to decide which items to put into a knapsack/bag.
 These items both have a weight and a value, and thus the objective is to maximize the total value we bring, keeping in mind
