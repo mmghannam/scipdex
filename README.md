@@ -23,6 +23,21 @@ Now you're ready to start the exercises 🚀 The repository is divided into chap
 
 We recommend starting by going to [intro](intro) and following the instructions in the [README.md](intro/README.md) file.
 
+## Checking your solutions
+Each exercise set has a bunch of test files, which you can run by
+```bash
+pytest EXCERCISE_FOLDER
+```
+
+for instance, to run all tests in the modeling chapter, you can run
+```bash
+pytest modeling
+```
+You can also run specific test files, for example, to run the tests for the knapsack problem set in the modeling 
+chapter, you can run
+```bash
+pytest modeling/knapsack/test_knapsack.py
+```
 
 ## Contributing
 If you find any issues or have suggestions for improvements, please open an [issue](https://github.com/mmghannam/scipdex/issues/new/choose) or a pull request. Thank you!
