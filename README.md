@@ -1,11 +1,11 @@
-# SCIPDex  
+# SCIPDex
 
 <img src="SCIPDex.svg" align="right" width="500px">
 
 A collection of interactive exercises to get you started (and more) with [PySCIPOpt](https://github.com/scipopt/PySCIPOpt).
-It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).  
+It is designed to be used along with the [PySCIPOpt documentation](https://scipopt.github.io/PySCIPOpt/docs/html/index.html).
 
-The exercises are split into folders by topic. Each folder contains a README.md file describing the exercises and python files with TODOs. Each folder has a `check.py` file that checks if the exercises are correctly solved.
+The exercises are split into folders by topic. Each folder contains a README.md file describing the exercises and python files with TODOs. Each folder has test files that checks if the exercises are correctly solved.
 
 ## Installation
 The exercises depend only on PySCIPOpt (and its dependencies) and pytest. You can install them with:
@@ -16,7 +16,7 @@ for other ways of installing PySCIPOPt, please refer to the [PySCIPOpt documenta
 
 ## Getting Started
 
-Now you're ready to start the exercises 🚀 The repository is divided into chapters, each containing multiple problems. In the chapter there is a README describing each of the problems, and in each of the problems there is a README describing the problem in detail and the exercises to be completed. Besides this README, the problem folder also has a `[problem].py` file to solve the exercises and a `check.py` file for testing your solution. More complex problems might need more files to structure the code better, but the corresponding README's explain the structure. Here is a brief description of each chapter:
+Now you're ready to start the exercises 🚀 The repository is divided into chapters, each containing multiple problems. In the chapter there is a README describing each of the problems, and in each of the problems there is a README describing the problem in detail and the exercises to be completed. Besides this README, the problem folder also has a `[problem].py` file to solve the exercises and a `test_[problem].py` file for testing your solution. More complex problems might need more files to structure the code better, but the corresponding README's explain the structure. Here is a brief description of each chapter:
 
 - modeling: An introduction to PySCIPOpt and its more elementary functionalities.
 - event_handler: Unlocking the ability to interrupt the solving process when a predetermined event is caught, and executing user-code.
@@ -33,7 +33,7 @@ for instance, to run all tests in the modeling chapter, you can run
 ```bash
 pytest modeling
 ```
-You can also run specific test files, for example, to run the tests for the knapsack problem set in the modeling 
+You can also run specific test files, for example, to run the tests for the knapsack problem set in the modeling
 chapter, you can run
 ```bash
 pytest modeling/knapsack/test_knapsack.py
