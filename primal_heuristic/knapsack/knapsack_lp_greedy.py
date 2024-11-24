@@ -4,7 +4,7 @@ import pyscipopt
 def knapsack_lp_greedy(capacity, weights, vars) -> pyscipopt.Heur:
     """
     TODO: implement a greedy heuristic for the knapsack problem using the LP solution values.
-    The solution should be composed of items with the highest LP solution values, that can fit in the knapsack.
+    The solution should be composed of items with the highest LP solution values that can fit in the knapsack.
     """
 
     class KnapsackLPGreedy(pyscipopt.Heur):
@@ -22,10 +22,8 @@ def knapsack_lp_greedy(capacity, weights, vars) -> pyscipopt.Heur:
             if lpsolstat != pyscipopt.SCIP_LPSOLSTAT.OPTIMAL:
                 return {"result": result}
 
-
             # transform vars to the transformed space
             self.vars = [self.model.getTransformedVar(var) for var in self.vars]
-
 
             sol = self.model.createSol(self)
 

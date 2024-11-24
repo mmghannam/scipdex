@@ -8,7 +8,7 @@ from pyscipopt import Model, SCIP_HEURTIMING, SCIP_PARAMSETTING
     (8, [1, 2, 3, 4, 5], 4),
 ])
 def test_knapsack_lp_greedy(capacity, weights, expected):
-    from primal_heuristic.knapsack_lp_greedy import knapsack_lp_greedy
+    from knapsack_lp_greedy import knapsack_lp_greedy
 
     model = Model()
 
