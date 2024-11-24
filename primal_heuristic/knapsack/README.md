@@ -1,36 +1,25 @@
-### The Knapsack Problem 
+## The Knapsack Problem 
 
 In this exercise, you will be asked to implement heuristics for the Knapsack problem. If you need a reminder, you can go over the [knapsack README](modeling/knapsack/README.md) in the modeling chapter.
 
 
-#### Exercise 1: Knapsack problem with fractional items
-Let us start with a simplified version of the classical knapsack, where instead of choosing which items to pick, we must choose which amount to pick.
-Mathematically, the variable bounds go from $x_i \in \lbrace 0,1 \rbrace$ to $0 \leq x_i \leq 1$.
+### Section 1: Greedy heuristic
+First, let's implement a greedy heuristic. 
 
-**Your task:** Formulate the problem described above with continuous variables 
+#### Exercise 1: LP-relaxation w/o PySCIPOpt
 
-<details>
-    <summary>Hint 1</summary>
-    The variable bounds can be set during variable creation with the options <code>lb</code> and <code>ub</code>, for lower bound and upper bound, respectively.
-</details>
+First, we will start with a much easier version of knapsack, where we are allowed to take fractions of items. This is called the *linear relaxation* and is solved at every node of the branch and bound tree. 
 
-#### Exercise 2: 0-1 Knapsack problem
-In many scenarios, we are more interested in the binary variant of the knapsack problem.
+**Your task:** Write a script that returns the optimal knapsack solution for the linear relaxation without using PySCIPOpt. 
 
-**Your task:** Enforce integrality on the variables.
+#### Exercise 2: Greedy heuristic w/o PySCIPOpt
 
-<details>
-    <summary>Hint 1</summary>
-    You can set the variable type during variable creation with the <code>vtype</code> option.
-</details>
+**Your task:** Get the 
 
-#### Exercise 3: Allow many items
-**Your task:** Allow the possibility for choosing multiple copies of the same item.
+#### Exercise 3: Implementing a Primal Heuristic
 
-<details>
-    <summary>Hint 1</summary>
-    Instead of the variables being binary, they can just be integer.
-</details>
+Now that you have done most of the hard work, let's incorporate it into an actual heuristic that SCIP will call.  
 
-#### Exercise 4: Max `n` items in the knapsack
-**Your task:** Force the solution to have at most `n` items.
+**Your task:** Complete the KnapsackLPGreedy class in [knapsack_lp_greedy.py](knapsack_lp_greedy.py).
+
+### Section 2: Some other heuristic
