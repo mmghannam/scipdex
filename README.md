@@ -1,5 +1,7 @@
 # SCIPDex
 
+> Currently still WIP, feedback and contributions are very welcome!
+
 <img src="SCIPDex.svg" align="right" width="500px">
 
 A collection of interactive exercises to get you started (and more) with [PySCIPOpt](https://github.com/scipopt/PySCIPOpt).
