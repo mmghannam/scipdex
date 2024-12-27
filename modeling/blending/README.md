@@ -22,15 +22,6 @@ $$
 
 Now, let's consider a scenario where the two substances are valuable when pure, even more valuable when mixed in similar proportions, and less valuable otherwise. It's plausible  might be that the mixture is somehow unstable unless it's in that profitable middle point.
 
-<!-- $$
-\begin{align*}
-\max_x      & \left(\sum_{i \in \mathcal{I}} 3\cdot\sin\left(10\left(\frac{x}{y}+0.28\right)\right)\ +3.5\right) - \left( \sum_{i \in \mathcal{I}} x_i c_i\right)\\
-\text{s.t.} &  x \leq S_x, \\
-            &  y \leq X_y, \\
-            &  x_i \in \lbrace 0,1 \rbrace, \forall i \in \mathcal{I} 
-\end{align*}
-$$ -->
-
 $$
 \begin{align*}
 \max_x      & \left(\sum_{i \in \mathcal{I}} x_i\cdot\sin\left(\frac{x_i}{2}\right)\right) - \left( \sum_{i \in \mathcal{I}} x_i c_i\right)\\
@@ -55,7 +46,10 @@ There can also be additional constraints enforcing a lower/upper bound on ratio 
 For the exercise, assume you are given a list with substances and 
 (this is slightly more interesting since they will need to somehow convert the substance name into variables)
 
-**Your task: **
+**Your task:** Add the mixing constraints from the 
+
+### Exercise 4: Temperature cap
+
 You might even want to upper-bound the temperature of the reaction, to make sure that the reactors will not become damaged.
 
-Add now some random constraints about the mixing of things
+**Your task:**
