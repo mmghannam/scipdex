@@ -21,7 +21,7 @@ Now that we are stopping at the correct points in the solving process, we need t
 
 <details>
     <summary>Hint 1</summary>
-    Don't forget that the logic might change depending on if it's a minimization of maximization problem.
+    Don't forget that the logic might change depending on if it's a minimization or a maximization problem.
 </details>
 
 

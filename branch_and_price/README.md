@@ -1,5 +1,3 @@
-## 04. Plugins in SCIP - Pricer
-
 ## Introduction
 This section is dedicated to implementing a branch-and-price algorithm in PySCIPOpt. We will use the well-known [bin packing problem](https://www.wikiwand.com/en/articles/Bin_packing_problem) as an example. If you need a refresher, you can also go over the Bin packing exercises in the [modeling section](../../01_modeling/README.md). Bin packing is a combinatorial optimization problem where a finite number of items of different sizes must be packed into bins or containers each with a fixed capacity. The goal is to minimize the number of bins used. The problem is NP-hard and has many applications in logistics and resource allocation.
 
