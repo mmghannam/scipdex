@@ -113,28 +113,34 @@ The pricing problem does not have information regarding the branching decisions 
 
 
 ### 3.2 Final step
-Now that we have implemented the pricing problem, and the branching rule, and handled infeasibility, you have now successfully implemented a full branch-and-price algorithm. Congrats!
+Now that we have implemented the pricing problem, the branching rule, and handled infeasibility, you have successfully implemented a full branch-and-price algorithm. Congrats!
 You can test your implementation by running the `test_bnp.py` file.
 
-### 3.3 Improving the vanilla Branch-and-Price
+### 3.3 Improving vanilla Branch-and-Price
 There are many more tricks to make your Branch-and-Price code faster and more robust. The following is a collection of self-paced exercises that ask you to implement some of these tricks. You may complete them in any order you'd like.
 
+<!-- #### Bonus Exercise: Using integrality
+As the objective function of the RMP always takes integer values, you can inform SCIP about it with the [setObjIntegral](https://pyscipopt.readthedocs.io/en/latest/api/model.html#pyscipopt.Model.setObjIntegral) method. In some instances, it might give you a performance improvement.   -->
+
 #### Bonus Exercise: Dual Stabilization
-For the inputs of 200 items and 100 capacity, the number of pricing iterations required to solve the root node relaxation is large (540).
-Let's dig into this further, let's first plot the dual values for each iteration.
 
-Dual stabilization techniques help circumvent the problem of oscillating dual values.
-One way to do this is by computing a linear combination of the dual values of the previous iterations
-and the current iteration. 
+> For this bonus exercise, we suggest using the instance with 200 items and 100 capacity.
 
-```
-duals[T] = (1 - alpha) * duals[T-1] + alpha * duals[T]
-```
+Column-generation can suffer from convergence issues. One of the most famous is known as the *yo-yo* effect, where the dual values change drastically from one iteration to the other. This is undesirable, since #todo
 
-where $T$ is the current iteration, and $\alpha \in [0, 1]$ is a parameter that controls the weight of the previous iteration.
+Your first task is to plot the evolution of the dual values and see their behavior at the root node.
 
-#### Bonus Exercise: Using integrality
-As the objective function of the RMP always takes integer values, you can inform SCIP about it with the [setObjIntegral](https://scipopt.github.io/PySCIPOpt/docs/html/classpyscipopt_1_1scip_1_1Model.html#ae9f1c77d31148661be3e4261df738b39) method. In some instances, it might give you a performance improvement.  
+The *yo-yo* effect can be minimized by techniques such as dual stabilization. One way to do this is by smoothing the dual variables. Rather than using the optimal dual values, using a convex combination of these values and the previous ones instead.
+
+For a given $\alpha \in [0,1]$, the smoothed duals $\tilde{\pi}$ can be computed as $\tilde{\pi_i} = (1 - \alpha)\pi_i^t + \alpha\tilde{\pi_i^{t-1}}$, where $\pi_i^t$ denotes the dual value of constraint $i$ in the t-th RMP iteration. In the first iteration, $\tilde{\pi} \equiv \pi$.
+
+Experiment around with different $\alpha$'s, notice the impact on the solving and the duals, and settle on one you feel improves the solving process.
+
+> **Note**: It's possible for there to be negative reduced cost columns for the optimal RMP dual values, but not for the stabilized ones. This is called a *misprice*, and requires re-solving the pricing problem with the actual dual values. In other words, we cannot use the stabilized duals for proving optimality.
+
+In comparison with the original run, see the difference in the number of nodes and LP iterations. Compare also both plots. You will likely see a noticeable improvement.
+
+As a little extra bonus exercise, try removing `setObjIntegral` from the master problem. This method tells SCIP that the objective function is always integral, allowing it to round up the dual bounds.
 
 #### Bonus Exercise: Initializing column generation
 Column generation requires an initial set of columns to get started. The current implementation starts with the single item per bin solution, which is the worst feasible solution.
