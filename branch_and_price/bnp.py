@@ -11,6 +11,8 @@ def extended_binpacking(sizes: List[int], capacity: int):
 
     model.setPresolve(SCIP_PARAMSETTING.OFF)
     model.setSeparating(SCIP_PARAMSETTING.OFF)
+    model.setHeuristics(SCIP_PARAMSETTING.OFF)
+    model.setObjIntegral()
     model.setParam("display/freq", 1) # show the output log after each node
 
     x = {}

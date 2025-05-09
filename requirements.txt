@@ -1,2 +1,3 @@
 pyscipopt
 pytest
+matplotlib

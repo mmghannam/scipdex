@@ -119,32 +119,45 @@ You can test your implementation by running the `test_bnp.py` file.
 ### 3.3 Improving the vanilla Branch-and-Price
 There are many more tricks to make your Branch-and-Price code faster and more robust. The following is a collection of self-paced exercises that ask you to implement some of these tricks. You may complete them in any order you'd like.
 
+#### Bonus Exercise: Dual Stabilization
+For the inputs of 200 items and 100 capacity, the number of pricing iterations required to solve the root node relaxation is large (540).
+Let's dig into this further, let's first plot the dual values for each iteration.
 
-#### Bonus Exercise 1: Using integrality
+Dual stabilization techniques help circumvent the problem of oscillating dual values.
+One way to do this is by computing a linear combination of the dual values of the previous iterations
+and the current iteration. 
+
+```
+duals[T] = (1 - alpha) * duals[T-1] + alpha * duals[T]
+```
+
+where $T$ is the current iteration, and $\alpha \in [0, 1]$ is a parameter that controls the weight of the previous iteration.
+
+#### Bonus Exercise: Using integrality
 As the objective function of the RMP always takes integer values, you can inform SCIP about it with the [setObjIntegral](https://scipopt.github.io/PySCIPOpt/docs/html/classpyscipopt_1_1scip_1_1Model.html#ae9f1c77d31148661be3e4261df738b39) method. In some instances, it might give you a performance improvement.  
 
-#### Bonus Exercise 2: Initializing column generation
+#### Bonus Exercise: Initializing column generation
 Column generation requires an initial set of columns to get started. The current implementation starts with the single item per bin solution, which is the worst feasible solution.
 Explore different heuristics to bin packing and provide their solutions to the pricer you created.
 
-#### Bonus Exercise 3: Handling numerics
+#### Bonus Exercise: Handling numerics
 If you managed to implement everything correctly, try to run your code to solve an instance with 200 items. You will most likely get into an infinite loop. 
 
 Investigate why this happens (the name of the exercise should give you a hint) and fix it. Hint: Look at the reduced cost of the columns you are generating.
 
-#### Bonus Exercise 4: Speeding up pricing
+#### Bonus Exercise: Speeding up pricing
 The current implementation only adds one column per iteration. Implement adding multiple columns per iteration and report how it affects the performance.
 
 Think of simple ways to speed up the pricing rounds. Are there better algorithms for knapsack?
 
-#### Bonus Exercise 5: Different-sized bins
+#### Bonus Exercise: Different-sized bins
 What is needed to allow for bins of different sizes? Implement it in your Branch-and-Price code.
 
-#### Bonus Exercise 6: Lagrangian bound
+#### Bonus Exercise: Lagrangian bound
 Read about the Lagrangian bound in the context of column generation and implement it in your pricer.
 Hint: You can return your computed lower-bound in the pricer and SCIP will use it to prune the tree.
 
-#### Bonus Exercise 7: Removing together constraints
+#### Bonus Exercise: Removing together constraints
 Having a constraint stipulating that two items must be packed in the same bin is functionally the same as having a single item with the size of the other two and removing them.
 The benefit of doing this instead is that we reduce the size of the pricing problem by one variable and one constraint per together constraint, which might provide a marginal benefit.
 
