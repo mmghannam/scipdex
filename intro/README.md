@@ -22,7 +22,9 @@ Refer to the [docs](https://pyscipopt.readthedocs.io/en/latest/tutorials/model.h
 
 
 ### Exercise 3: Read a problem from a file
-TODO! 
+
+PySCIPOpt also allows you to read problems, making it easier to test your code with different models, and not having the need to model them.
+
 **Your task:** Read the `roi2alpha3n4.mps.gz` instance.
 
 <details>
@@ -31,7 +33,11 @@ TODO!
 </details>
 
 ### Exercise 4: Set parameters
-TODO!
+
+Sometimes you might not be interested in solving the model to optimality, or there might be some time limit you must respect. It's easy to impose these in PySCIPOpt!
+
+You can see the full list of SCIP parameters in [here](https://www.scipopt.org/doc/html/PARAMETERS.php).
+
 **Your task:** Optimize the model from exercise 3 with the following parameters
 
 |  Parameter | Value |
@@ -46,12 +52,23 @@ TODO!
 </details>
 
 ### Exercise 5: Query solution and model stats
-TODO!
-**Your task**: Discover which of the parameters you set in exercise 4 terminated the solving process.
+
+After solving the model, you can check some of its statistics. For example, it's possible to see the gap (after solving), see the values of the variables in the best solution, and much more.
+
+**Your task**: Discover which of the parameters you set in exercise 4 terminated the solving process, and check the objective function.
+
+<details>
+    <summary>Hint 1</summary>
+    It's also possible to see a lot of information about the run by using `model.writeStatistics(filename.stats)`
+</details>
 
 ### Exercise 6: Setting emphasis modes
-TODO!
-**Your task:**
+s
+Optimization solvers are very complex, full of interacting components focusing on different parts of the solving process. While one instance might benefit heavily from presolving (essentially, ways of simplifying the problem), there might be another for which heuristics (methods to generate feasible solutions) help a lot.
+
+Most solvers allow users to change the focus of its solving, so if you know characteristics of your instance, then you might hint that to the solver.  
+
+**Your task:** Disable presolving and increase the focus of heuristics to the maximum.
 
 ### Outro
 If you've reached this far, congratulations!🎉 
