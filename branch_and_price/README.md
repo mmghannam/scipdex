@@ -5,11 +5,31 @@ The first two chapters will give a light overview of bin packing, both its compa
 
 If you try to run the branch-and-price code, you will encounter errors. That is because some code is missing and must be implemented by you. The error messages tell you what you should do. Eg: "The knapsack solver is not implemented yet" implies that you should implement the knapsack solver.
 
+## Section 1. Compact formulation: Modeling with assignments
+The bin packing problem is a classic optimization problem that asks:
 
-## Section 1. Extended Formulation: Modeling with Packings
+> How can we pack a set of items with given sizes into the fewest number of bins, without exceeding the capacity of any bin?
+
+Each bin has the same capacity, and the goal is to assign items to bins such that no bin overflows and the total number of bins used is minimized.
+
+Assuming an upper bound on the number of bins (e.g., one per item), we can formulate the problem as follows:
+
+$$
+\begin{align*}
+    \min_{x,y} & \quad \sum_{b \in \mathcal{B}} y_b \\
+    \textrm{subject to} & \quad sum_{b \in \mathcal{B}} x_{ib} = 1, \quad & \forall i \in \mathcal{I} \\
+                        & \quad \sum_{i \in \mathcal{I}} s_ix_{ib} \leq Cy_b, \quad & \forall b \in \mathcal{B}\\
+                        & \quad x_{ib} \in \{0,1\}, \quad & \forall i \in \mathcal{I} \, \forall b \in \mathcal{B}\\
+                        & \quad y_b \in \{0,1\}, \quad &\forall b \in \mathcal{B}
+\end{align*}
+$$
+
+This direct formulation of the bin-packing problem is famously not very good. Some reasons are the enormous amount of symmetry and the very high sparsity of the constraint matrix.
+
+## Section 2. Extended Formulation: Modeling with Packings
 Next, we switch our perspective to the so-called "extended" formulation of the bin packing problem. Instead of modeling with assignments of items to bins we "extend" all possible packings of items into bins. A packing is simply a subset of items that be packed into a bin (respecting its capacity). Using this concept of packings we arrive at an equivalent formulation:
 
-Given a set of items $I$ and a set of packings $\mathcal{P}$, we have a variable $z_P$ that is equal to 1 if packing $P$ is used and 0 otherwise. We have a set of constraints that ensure that each item is packed into exactly one bin and that the total size of the items in each bin does not exceed the bin capacity. The objective is to minimize the number of bins used.
+Given a set of items $I$ and a set of packings $\mathcal{P}$, we have a variable $z_P$ that is equal to 1 if packing $P$ is used and 0 otherwise, and variable $a_i^p$ is equal to $1$ if item $i$ is in packing $p$ and $0$ otherwise. We also have a set of constraints that ensure that each item is packed into exactly one bin. The objective remains to minimize the number of bins used.
 
 $$
 \begin{align*}
@@ -23,10 +43,10 @@ where $\mathcal{P}$ is the set of all possible packings of items into bins.
 
 This formulation has one problem. The size of the problem grows exponentially with the number of items. Only instances with a small number of items can be even loaded in memory. Therefore, we attempt to solve it using a branch-and-price algorithm. This formulation and the general structure required for solving this problem can be found in [scipack/bnp.py](scipack/bnp.py) (but again, it's missing some code snippets you must add).
 
-## Section 2. Branch-and-Price Algorithm
+## Section 3. Branch-and-Price Algorithm
 In this section, we will first discuss how to solve the linear relaxation of the problem using column generation. Then, we will discuss how to handle branching decisions and infeasibility.
 
-### 2.1 Column Generation
+### 3.1 Column Generation
 
 Thinking of the exponential number of possible packings, one realizes that most of them are actually not that useful. For example, if packing 1 corresponds to using item A, and packing 2 to using items A and B, why would we ever choose packing 1? Most of the packings are inefficient like this, hinting that only a handful of columns are actually useful. Column generation (which is heavily linked to the simplex algorithm) will find these columns.
 
@@ -70,7 +90,7 @@ To check if your implementation is correct you can run the `test_knapsack.py` fi
 SCIP can handle pricing internally with the `pricer` plugin. You can see the basic infrastructure in `pricer.py`. The pricer gets the dual information from the RMP (with `getDualsolLinear`), feeds it into the pricing problem (`pricing_solver`), and decides whether to add the resulting column or not (when checking `if min_redcost < 0`). For the curious, you can see more details in [here](https://www.scipopt.org/doc/html/PRICER.php).
 
 
-### Branching
+### 3.2 Branching
 
 When dealing with compact formulations, solvers tend to have very efficient branching rules. This is sometimes not the case when doing branch-and-price, as the usual variable branching techniques can exhibit strong deficiencies. Suppose we decide to branch on variable $x$. In one of the branches, we add the constraint $x=0$, and in the other $x=1$. This leads to the following:
 
