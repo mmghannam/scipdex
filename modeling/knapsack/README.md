@@ -6,12 +6,6 @@ The most popular variant of this problem is the $0-1$ knapsack, where one needs 
 These items both have a weight and a value, and thus the objective is to maximize the total value we bring, keeping in mind
 that the knapsack's capacity cannot be exceeded by the total weight of chosen items.
 
-<figure>
-<p align="center">
-<img src="skippy_knapsack.png" alt="drawing" width="400"/>
-<figcaption align="center">Figure 1: Skippy undecided between taking a gold bar, a pizza slice, and the Z1 motor-driven mechanical computer.</figcaption>
-</figure>
-
 $$
 \begin{align*}
 \max_x      & \sum_{i \in \mathcal{I}} x_i v_i \\
@@ -20,12 +14,17 @@ $$
 \end{align*}
 $$
 
-As you will see with these classical problems, they ????
+<figure>
+<p align="center">
+<img src="skippy_knapsack.png" alt="drawing" width="400"/>
+<figcaption align="center">Figure 1: Skippy undecided between taking a gold bar, a pizza slice, and the Z1 motor-driven mechanical computer.</figcaption>
+</figure>
+
 Sometimes the key to solving a real-world problem is to identify the well-known classic problem that represents them.  
 Here are some examples where knapsack could be applied:
-- a???
-- b???
-- c???
+- Loading cargo in airplanes given their cost and weight
+- Choosing which ads to display on a webpage, given revenue and size constraints.
+- Maximizing portfolio revenue given risk and diversification constraints
 
 #### Exercise 1: Knapsack problem with fractional items
 Let us start with a simplified version of the classical knapsack, where instead of choosing which items to pick, we must choose which amount to pick.
